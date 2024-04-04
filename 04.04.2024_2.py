@@ -1,4 +1,4 @@
-class index:
+class City:
     def __init__(self, name, region, population, index, country, tel_code):
         self.name = name
         self.region = region
