@@ -36,3 +36,4 @@ print(va * 2)
 print(va + va1)
 va1.normalize()
 print(va1)
+
