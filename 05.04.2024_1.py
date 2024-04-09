@@ -48,4 +48,16 @@ def vector(a, b):
 print(vector(va, va1))
 
 
+vecs_ = [va, va1]
+minn = vecs_[0]
+def min_len(vecs):
+    for i in vecs:
+        if i < minn:
+            minn = i
+
+
+
+
+print(min_len(vecs_))
+
 
