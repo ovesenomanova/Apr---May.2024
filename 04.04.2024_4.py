@@ -33,6 +33,7 @@ class Fraction:
 
 i1 = Fraction(3, 5)
 i2 = Fraction(4, 9)
-print(i1 + i2, i1 - i2,)
-print( i1 * i2)
+print(i1 + i2)
+print(i1-i2)
+print(i1 * i2)
 print(i1/i2)
