@@ -8,8 +8,31 @@ class Vector:
         x = self.x ** 2
         y = self.y ** 2
         v = (x + y) ** 0.5
-        return v
+        return int(v)
+
+    def __mul__(self, other):
+        x = self.x * other
+        y = self.y * other
+        return Vector(x, y)
+
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
+
+    def normalize(self):
+        v = len(self)
+        x = self.x / v
+        y = self.y / v
+
+    def __repr__(self):
+        return f'{self.x, self.y}'
 
 
 va = Vector(5, 4)
+va1 = Vector(6, 8)
 print(len(va))
+print(va * 2)
+print(va + va1)
+va1.normalize()
+print(va1)
