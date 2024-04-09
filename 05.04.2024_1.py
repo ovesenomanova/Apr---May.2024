@@ -37,3 +37,15 @@ print(va + va1)
 va1.normalize()
 print(va1)
 
+
+def vector(a, b):
+    x = (a.x - b.x)**2
+    y = (a.y - b.y)**2
+    v = (x + y) ** 0.5
+    return v
+
+
+print(vector(va, va1))
+
+
+
