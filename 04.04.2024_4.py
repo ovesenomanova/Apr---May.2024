@@ -31,6 +31,7 @@ class Fraction:
         return f'{self.n}/{self.d}'
 
 
+
 i1 = Fraction(3, 5)
 i2 = Fraction(4, 9)
 print(i1 + i2)
