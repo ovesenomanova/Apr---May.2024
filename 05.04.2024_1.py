@@ -25,6 +25,11 @@ class Vector:
         x = self.x / v
         y = self.y / v
 
+    def __len__(self):
+        ln = (self.x ** 2 + self.y ** 2) ** 0.5
+        return int(ln)
+
+
     def __repr__(self):
         return f'{self.x, self.y}'
 
@@ -47,15 +52,12 @@ def vector(a, b):
 
 print(vector(va, va1))
 
-
-vecs_ = [va, va1]
-minn = vecs_[0]
 def min_len(vecs):
-    for i in vecs:
-        if i < minn:
-            minn = i
-
-
+    minn_vec = vecs[0]
+    for vec in vecs:
+        if len(vec) < len(minn_vec):
+            minn_vec = vec
+    return minn_vec
 
 
 print(min_len(vecs_))
