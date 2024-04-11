@@ -46,4 +46,12 @@ print(MathUtils.aver(1, 2, 6, 8))
 print(MathUtils.min(5, 10, 15, 20))
 print(MathUtils.max(1, 2, 6, 8))
 
+class Human:
+    def __init__(self, name):
+        self.name = name
 
+    def get_x(self):
+        return self.name
+
+    def set_x(self, value):
+        self.name = value
