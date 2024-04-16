@@ -4,8 +4,10 @@ class Number:
         self.x = x
 
     def __add__(self, other):
-        x = self.x + other
-        return Number(x)
+        if type(other) == int:
+            return Number(self.x + other)
+        if type(other) == Number:
+            return Number(self.x + other.x)
 
 
     def __sub__(self, other):
@@ -27,6 +29,6 @@ class Number:
 
 
 x = Number(5)
-print(x * 3)
+print(x + 3, x + Number(9))
 
 
