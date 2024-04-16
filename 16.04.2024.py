@@ -29,6 +29,6 @@ class Number:
 
 
 x = Number(5)
-print(x + 3, x + Number(9))
+print(x + 3, x + Number(10))
 
 
