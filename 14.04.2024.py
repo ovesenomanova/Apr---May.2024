@@ -1,7 +1,7 @@
 class Auto:
                                             #     Реализуйте класс «Автомобиль». Необходимо хранить
                                             # в полях класса: название модели, год выпуска, производителя, объем двигателя, цвет машины, цену.
-    def __init__(self, model, year, brand, capacity, color, price):
+    def __unit__(self, model, year, brand, capacity, color, price):
         self.model = model
         self.year = year
         self.brand = brand
@@ -9,12 +9,12 @@ class Auto:
         self.color = color
         self.price = price
                                                 # Реализуйте методы класса для ввода данных, вывода данных
-    def print(self):
-        print(
+    def print_(self):
+        print_(
             f'Модель{self.model}, марка автомобиля {self.brand} {self.year} год выпуска с объемом двигателя {self.capacity} литров, цвет {self.color} и стоимостью {self.price} рублей')
 
-    def input(self):
-        input(f' Заполните поля для автомобиля. '
+    def input_(self):
+        input_(f' Заполните поля для автомобиля. '
                f'Модель{self.model}, марка автомобиля {self.brand} {self.year} год выпуска с объемом двигателя {self.capacity} литров, цвет {self.color} и стоимостью {self.price} рублей ')
                                                 # Реализуйте доступ к отдельным полям через методы класса
     def set_model(self, model_new):
@@ -55,7 +55,3 @@ class Auto:
 
     def __repr__(self):
         return f'{self.model, self.year, self.brand, self.capacity, self.color, self.price}'
-
-
-i1 = Auto('Лада', 2010, "Ваз", 108, "белый", 100000)
-print(i1)
