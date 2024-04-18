@@ -47,7 +47,7 @@ class Passport:
 
 class Foreign_Passport (Passport):
     def __init__(self, FIO, date_of_Birth, country, number, series, issued_by, code, visa):
-        super__init__(FIO, date_of_Birth, country, number, series, issued_by, code)
+        super().__init__(FIO, date_of_Birth, country, number, series, issued_by, code)
         self.visa = visa
 
     def set_visa(self, visa_new):
