@@ -46,6 +46,40 @@ class Stadium:
 
     def __repr__(self):
         return f'{self.name, self.opening_date, self.country, self.city, self.capacity}'
+                        # Реализуйте доступ к отдельным полям через методы класса
+    def __lt__(self, other):
+        if type(other) == int:
+            return self.capacity < other
+        if type(other) == Stadium:
+            return self.capacity < other.capacity
 
-i1 = Stadium('Салют', 2010, 'Россия', "Саратов", 26000)
-print(i1)
+    def __gt__(self, other):
+        if type(other) == int:
+            return self.capacity > other
+        if type(other) == Stadium:
+            return self.capacity > other.capacity
+
+    def __le__(self, other):
+        if type(other) == int:
+            return self.capacity <= other
+        if type(other) == Stadium:
+            return self.capacity <= other.capacity
+
+    def __ge__(self, other):
+        if type(other) == int:
+            return self.capacity >= other
+        if type(other) == Stadium:
+            return self.capacity >= other.capacity
+
+    def __eq__(self, other):
+        if type(other) == int:
+            return self.capacity == other
+        if type(other) == Stadium:
+            return self.capacity == other.capacity
+
+    def __ne__(self, other):
+        if type(other) == int:
+            return self.capacity != other
+        if type(other) == Stadium:
+            return self.capacity != other.capacity
+

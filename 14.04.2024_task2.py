@@ -54,6 +54,39 @@ class Book:
 
     def __repr__(self):
         return f'{self.title, self.year_of_issue, self.publisher, self.genre, self.author, self.price}'
+                                # Добавьте конструктор, а также необходимые перегруженные методы
+    def __lt__(self, other):
+        if type(other) == int:
+            return self.price < other
+        if type(other) == Book:
+            return self.price < other.price
 
-i1 = Book('Война и мир', 2010, 'Booknet', 'Проза', 'Лев Толстой', 1000)
-print(i1)
+    def __gt__(self, other):
+        if type(other) == int:
+            return self.book_price > other
+        if type(other) == Book:
+            return self.price > other.price
+
+    def __le__(self, other):
+        if type(other) == int:
+            return self.price <= other
+        if type(other) == Book:
+            return self.price <= other.price
+
+    def __ge__(self, other):
+        if type(other) == int:
+            return self.price >= other
+        if type(other) == Book:
+            return self.price >= other.price
+
+    def __eq__(self, other):
+        if type(other) == int:
+            return self.price == other
+        if type(other) == Book:
+            return self.price == other.price
+
+    def __ne__(self, other):
+        if type(other) == int:
+            return self.price != other
+        if type(other) == Book:
+            return self.price != other.price

@@ -55,7 +55,51 @@ class Auto:
 
     def __repr__(self):
         return f'{self.model, self.year, self.brand, self.capacity, self.color, self.price}'
+                                        # Добавьте конструктор, а также необходимые перегруженные методы
+    def __add__(self, other):
+        if type(other) == int:
+            return Auto(self.model, self.year, self.brand, self.capacity, self.color, self.price + other)
+        if type(other) == Auto:
+            return Auto(self.model, self.year, self.brand, self.capacity, self.color, self.price + other.price)
 
+    def __sub__(self, other):
+        if type(other) == int:
+            return Auto(self.model, self.year, self.brand, self.capacity, self.color, self.price - other)
+        if type(other) == Library:
+            return Auto(self.model, self.year, self.brand, self.capacity, self.color, self.price - other.price)
 
-i1 = Auto('Лада', 2010, 'ВАЗ', 108, 'белый', 100000)
-print(i1)
+    def __lt__(self, other):
+        if type(other) == int:
+            return self.price < other
+        if type(other) == Auto:
+            return self.price < other.price
+
+    def __gt__(self, other):
+        if type(other) == int:
+            return self.book_price > other
+        if type(other) == Auto:
+            return self.price > other.price
+
+    def __le__(self, other):
+        if type(other) == int:
+            return self.price <= other
+        if type(other) == Auto:
+            return self.price <= other.price
+
+    def __ge__(self, other):
+        if type(other) == int:
+            return self.price >= other
+        if type(other) == Auto:
+            return self.price >= other.price
+
+    def __eq__(self, other):
+        if type(other) == int:
+            return self.price == other
+        if type(other) == Auto:
+            return self.price == other.price
+
+    def __ne__(self, other):
+        if type(other) == int:
+            return self.price != other
+        if type(other) == Auto:
+            return self.price != other.price
