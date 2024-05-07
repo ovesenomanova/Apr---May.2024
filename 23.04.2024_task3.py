@@ -38,8 +38,8 @@ class Square (Shape):
 
     def load(self):
         with open('file.txt', 'r') as f:
-            ls = f.read()
-            print(ls.split())
+            ls = f.readline()
+            print(ls)
 
     def __repr__(self):
         return f'{self.area()}'
@@ -89,6 +89,10 @@ class Ellipse(Rectangle):
     def __repr__(self):
         return f'{self.area()}'
 
+class ShapeList:
+    def __init__(self):
+
+lst = []
 
 i1 = Square(2, 5, 10)
 i1.save()
