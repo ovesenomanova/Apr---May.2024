@@ -1,22 +1,16 @@
 import string
 
 class Stack:
-    def __init__(self, stack_size):
+    def __init__(self):
         self.items = []
-        self.items_size = stack_size
 
     def is_empty(self):
         return len(self.items) == 0
-
-    def is_full(self):
-        return len(self.items) == self.items_size
 
     def clear(self):
         self.items = []
 
     def push(self, item):
-        if self.size() >= self.items_size:
-            self.pop()
         self.items.append(str(item))
 
     def pop(self):                          #удаляет последний элемент в стеке
@@ -47,12 +41,34 @@ class Stack:
         print(*self.items)
 
 
-stack1 = Stack(20)
+class StackFix(Stack):
+    def __init__(self, stack_size):
+        super().__init__()
+        self.stack_size = stack_size
+
+    def push(self, item):
+        if self.size() >= self.stack_size:
+            self.pop()
+        self.items.append(str(item))
+
+    def is_full(self):
+        return len(self.items) == self.stack_size
+
+
+stack1 = Stack()
+stack2 = StackFix(20)
 for i in range(50):
     stack1.push(string.ascii_letters[:i])
+    stack2.push(string.ascii_letters[:i])
 
+print("stack1:")
 stack1.show()
 print(*stack1.pop2())
 stack1.show()
+
+print("stack2:")
+stack2.show()
+print(*stack2.pop2())
+stack2.show()
 
 
